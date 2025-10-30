@@ -60,3 +60,60 @@ interface GigabitEthernet0/4
  no shutdown
 exit
 ```
+## ESP32 implementado em uma rede Wi-Fi corporativa com autenticação EAP
+
+```mermaid
+graph TD
+
+%% Nível de dispositivos
+    subgraph IoT Devices
+        ESP32["ESP32 (Supplicant)\nCliente Wi-Fi"]
+    end
+
+%% Nível de rede
+    subgraph Wireless_Network["Rede Wi-Fi Corporativa"]
+        AP["Access Point (Authenticator)\n802.1X / WPA2-Enterprise"]
+    end
+
+%% Nível de autenticação
+    subgraph Auth_Layer["Camada de Autenticação"]
+        RADIUS["Servidor RADIUS\n(Autenticador Real)"]
+    end
+
+%% Backend de controle de usuários
+    subgraph Backend["Serviços de Identidade e Autorização"]
+        LDAP["Servidor LDAP / Active Directory"]
+        DB["Banco de Dados de Usuários"]
+    end
+
+%% Relações entre componentes
+    ESP32 -- EAPOL (EAP over LAN) --> AP
+    AP -- RADIUS Protocol (UDP/1812) --> RADIUS
+    RADIUS -- Consulta de credenciais --> LDAP
+    RADIUS -- Log e auditoria --> DB
+
+%% Indicação de comunicação segura
+    classDef secure fill:#d0f0d0,stroke:#2f7a2f,stroke-width:2px;
+    class ESP32,AP secure;
+    class RADIUS,LDAP,DB secure;
+
+%% Legenda
+    subgraph Legend["Legenda"]
+        direction LR
+        A["🟢 Comunicação segura (TLS/SSL)"]
+        B["🔒 Autenticação baseada em EAP (802.1X)"]
+    end
+```
+### 🔒 Fluxo resumido da autenticação
+
+1-ESP32 envia solicitação de conexão à rede Wi-Fi Enterprise.
+
+ - O Access Point solicita as credenciais via EAP.
+
+ - As credenciais são repassadas ao Servidor RADIUS via protocolo RADIUS.
+
+ - O RADIUS consulta o LDAP/AD para verificar a validade do usuário.
+
+ - Se aprovado, o RADIUS envia mensagem de sucesso (EAP-Success).
+
+ - O ESP32 estabelece uma sessão segura e criptografada (WPA2/WPA3-Enterprise).
