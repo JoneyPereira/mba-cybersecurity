@@ -117,3 +117,48 @@ graph TD
  - Se aprovado, o RADIUS envia mensagem de sucesso (EAP-Success).
 
  - O ESP32 estabelece uma sessão segura e criptografada (WPA2/WPA3-Enterprise).
+
+### Arquitetura C4 – Autenticação EAP (802.1X) com ESP32
+
+```mermaid
+C4Container
+title Arquitetura C4 – Autenticação EAP (802.1X) com ESP32
+
+Person(usr, "Usuário", "Responsável pela configuração e uso do dispositivo ESP32 na rede corporativa.")
+
+System_Boundary(iot_boundary, "Dispositivo IoT - ESP32") {
+    Container(esp32_firmware, "Firmware ESP32", "C/C++ (ESP-IDF)", "Gerencia conexão Wi-Fi e autenticação EAP via esp_eap_client API.")
+    Container(esp_wifi_module, "Módulo Wi-Fi", "Driver de rede", "Executa o protocolo 802.1X e criptografia WPA2/WPA3.")
+}
+
+System_Boundary(network_boundary, "Infraestrutura de Rede") {
+    Container(ap, "Access Point", "Hardware/Software", "Controla o acesso e encaminha mensagens EAP para o servidor RADIUS.")
+    Container(radius, "Servidor RADIUS", "FreeRADIUS / Microsoft NPS", "Realiza autenticação e autorização de clientes via protocolo RADIUS.")
+}
+
+System_Boundary(auth_backend, "Backend de Autenticação") {
+    Container(ldap, "Servidor LDAP / Active Directory", "Serviço de Diretório", "Armazena credenciais e políticas de autenticação de usuários/dispositivos.")
+    Container(db_logs, "Banco de Dados de Logs", "PostgreSQL / MySQL", "Registra logs de autenticação e tentativas de acesso.")
+}
+
+Rel(usr, esp32_firmware, "Configura SSID e credenciais de acesso")
+Rel(esp32_firmware, esp_wifi_module, "Gerencia autenticação EAP (PEAP, TLS, TTLS)")
+Rel(esp_wifi_module, ap, "Troca pacotes EAPOL (EAP over LAN)")
+Rel(ap, radius, "Encaminha mensagens EAP via protocolo RADIUS (UDP 1812)")
+Rel(radius, ldap, "Consulta credenciais do usuário/dispositivo")
+Rel(radius, db_logs, "Armazena logs de autenticação e auditoria")
+Rel(radius, ap, "Retorna resultado EAP-Success ou EAP-Failure")
+Rel(ap, esp32_firmware, "Permite ou bloqueia acesso à rede")
+```
+
+### ⚙️ Fluxo de autenticação resumido
+
+- O usuário configura o ESP32 com SSID e credenciais.
+
+- O ESP32 Firmware inicia a conexão e executa o EAP Client.
+
+- O Access Point recebe o pedido e envia o EAP-Request.
+
+- O Servidor RADIUS valida as credenciais consultando o LDAP/AD.
+
+- O resultado é logado e retornado ao ESP32, que ganha (ou não) acesso à rede.
