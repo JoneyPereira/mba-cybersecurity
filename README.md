@@ -1,5 +1,43 @@
-# mba-cybersecurity
-Notas de aulas de projetos desenvolvidos.
+# 🔐 MBA em Cibersegurança — Notas de Estudo
+
+Este repositório contém minhas **anotações, mapas mentais e resumos técnicos**
+produzidos durante o **MBA em Cibersegurança**.
+
+O objetivo é:
+- Consolidar o aprendizado
+- Facilitar revisões para provas
+- Criar um material de referência profissional
+
+---
+## 📚 Conteúdo
+
+- Fundamentos de Cibersegurança
+- Redes de Computadores e Segurança
+- Criptografia
+- Segurança em Aplicações
+- Governança, Risco e Compliance
+- Ethical Hacking e Gestão de Vulnerabilidades
+
+---
+
+## 🧠 Metodologia de Estudo
+
+- Resumos teóricos
+- Mapas mentais (Mermaid)
+- Questões comentadas
+- Casos reais de incidentes
+- Conexão com práticas de mercado
+
+---
+
+## ⚠️ Aviso
+
+Este material é exclusivamente educacional e não deve ser utilizado
+para fins ilegais ou não autorizados.
+
+---
+
+📌 *Repositório mantido como parte da evolução profissional em Cibersegurança.*
 
 ## Segmentação em VLANs e regras de acesso controladas
 
