@@ -1,0 +1,99 @@
+# 🖥️ Segurança de Sistemas Operacionais
+Mapa mental de estudos — MBA em Cibersegurança
+
+```mermaid
+mindmap
+  root((Segurança de<br/>Sistemas<br/>Operacionais))
+
+    Seguranca_em_Windows
+      Conceitos_Basicos
+        Identidade
+        Controle_de_Acesso
+        Auditoria
+        Atualizacoes
+      Mecanismos_de_Seguranca
+        Active_Directory
+        Kerberos
+        Windows_Defender
+        Firewall_do_Windows
+        BitLocker
+        UAC
+      Configuracoes_de_Seguranca
+        Politicas_de_Senha
+        Desativar_Servicos
+        Bloquear_SMBv1
+        Auditoria_de_Logon
+        GPO
+      Boas_Praticas
+        Menor_Privilegio
+        MFA
+        Hardening
+        Monitoramento
+        Atualizacoes_Automaticas
+
+    Seguranca_em_Linux_UNIX
+      Conceitos_Basicos
+        Tudo_e_Arquivo
+        Permissoes
+        Usuarios_e_Grupos
+      Mecanismos_de_Seguranca
+        Permissoes_rwx
+        sudo
+        SELinux
+        AppArmor
+        iptables_nftables
+        Fail2ban
+      Configuracoes_de_Seguranca
+        Desativar_Login_Root
+        SSH_com_Chave
+        Firewall_Ativo
+        Logs_var_log
+      Boas_Praticas
+        Menor_Privilegio
+        Atualizacoes
+        Auditoria_auditd
+        Backups
+        Monitoramento
+
+    Atualizacoes_e_Patches
+      Importancia
+        Correcao_de_Vulnerabilidades
+        Prevencao_de_Exploits
+      Aplicacao_de_Patches
+        Windows_Update
+        WSUS
+        apt_yum_dnf
+      Estrategia_de_Gerenciamento
+        Inventario
+        Classificacao_de_Criticidade
+        Testes
+        Deploy_Controlado
+        Monitoramento
+      Riscos_da_Falta_de_Patch
+        Ransomware
+        Escalada_de_Privilegios
+        Vazamento_de_Dados
+        Multas_e_Compliance
+
+    Controle_de_Acesso_e_Usuarios
+      Conceitos
+        Quem
+        O_que
+        Quando
+        Como
+      Metodos_de_Autenticacao
+        Senha
+        Certificado_Digital
+        Token
+        Biometria
+        MFA
+      Gerenciamento_de_Privilegios
+        Menor_Privilegio
+        Separacao_de_Funcoes
+        Contas_Admin_Separadas
+        Revisao_Periodica
+      Praticas_por_Ambiente
+        RBAC
+        IAM
+        PAM
+        Auditoria_de_Acessos
