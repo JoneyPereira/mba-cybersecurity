@@ -1,0 +1,113 @@
+# 🌐 Redes de Computadores e Segurança
+Mapa mental de estudos — MBA em Cibersegurança
+
+```mermaid
+mindmap
+  root((Redes de Computadores<br/>e Segurança))
+
+    Fundamentos_de_Redes
+      Arquitetura_de_Redes
+        Modelo_OSI
+          Camada_Fisica
+          Camada_Enlace
+          Camada_Rede
+          Camada_Transporte
+          Camada_Sessao
+          Camada_Apresentacao
+          Camada_Aplicacao
+        Modelo_TCP_IP
+      Dispositivos_de_Rede
+        Switch
+        Roteador
+        Firewall
+        Access_Point
+        IDS_IPS
+      Protocolos_de_Comunicacao
+        IP
+        TCP
+        UDP
+        DNS
+        HTTP_HTTPS
+        SMTP_POP_IMAP
+      Troubleshooting
+        Ping
+        Traceroute
+        Ipconfig_Ifconfig
+        Netstat
+        Nslookup_Dig
+      Seguranca_de_Rede
+        Segmentacao
+        VLAN
+        DMZ
+        Controle_de_Acesso
+        Monitoramento
+
+    Protocolos_de_Rede_Seguros
+      Principios
+        Confidencialidade
+        Integridade
+        Autenticidade
+      Criptografia
+        Simetrica_AES
+        Assimetrica_RSA_ECC
+        Hash_SHA
+      Autenticacao
+        Senha
+        Certificado_Digital
+        MFA
+      Protocolos_Seguros
+        HTTPS_TLS
+        SSH
+        SFTP
+        SNMPv3
+        IPsec
+      Riscos_e_Ameacas
+        Sniffing
+        MITM
+        Spoofing
+        Replay_Attack
+        Downgrade_Attack
+
+    Firewall_e_IDS_IPS
+      Firewall
+        Packet_Filter
+        Stateful
+        NGFW
+      IDS
+        Deteccao
+        Alertas
+      IPS
+        Prevencao
+        Bloqueio
+      Politicas_de_Seguranca
+        Menor_Privilegio
+        Bloquear_por_Padrao
+        Revisao_Periodica
+      Logs
+        Firewall
+        IDS_IPS
+        Servidores
+        Aplicacoes
+        SIEM
+
+    VPNs_e_Seguranca_de_Comunicacao
+      Conceitos_Fundamentais
+        Tunel_Criptografado
+      Tipos_de_VPN
+        Site_to_Site
+        Remote_Access
+        Client_to_Site
+      Protocolos_VPN
+        IPsec
+        OpenVPN
+        WireGuard
+      Ameacas
+        Credenciais_Vazadas
+        Configuracao_Insegura
+        Criptografia_Fraca
+        Split_Tunneling
+      Criterios_de_Escolha
+        Nivel_de_Seguranca
+        Performance
+        Compliance
+        Custo
