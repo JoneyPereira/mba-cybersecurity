@@ -1,0 +1,90 @@
+# 🔐 Criptografia
+Mapa mental de estudos — MBA em Cibersegurança
+
+```mermaid
+mindmap
+  root((Criptografia))
+
+    Introducao_a_Criptografia
+      Conceitos_Basicos
+        Texto_Claro
+        Texto_Cifrado
+        Chave_Criptografica
+      Importancia
+        Confidencialidade
+        Integridade
+        Autenticidade
+      Tipos_de_Criptografia
+        Simetrica
+        Assimetrica
+      Aplicacoes_do_Cotidiano
+        HTTPS
+        VPN
+        Mensageria_Segura
+        Armazenamento_Criptografado
+        Pagamentos_Digitais
+
+    Criptografia_Simetrica
+      Conceito
+        Uma_Unica_Chave
+        Cifra_e_Decifra
+      Algoritmos_Principais
+        AES
+        DES_Obsoleto
+        Triple_DES
+        Blowfish
+        ChaCha20
+      Vantagens
+        Alta_Velocidade
+        Baixo_Custo_Computacional
+      Desvantagens
+        Distribuicao_de_Chaves
+        Escalabilidade
+      Aplicacoes_Praticas
+        Criptografia_de_Disco
+        Backup_Criptografado
+        Dados_em_Massa
+
+    Criptografia_Assimetrica
+      Conceito
+        Par_de_Chaves
+        Chave_Publica
+        Chave_Privada
+      Algoritmos_Principais
+        RSA
+        ECC
+        DSA
+        ElGamal
+      Vantagens
+        Troca_Segura_de_Chaves
+        Autenticacao
+      Desvantagens
+        Baixa_Performance
+        Alto_Custo_Computacional
+      Aplicacoes_Praticas
+        HTTPS
+        SSH
+        Certificados_Digitais
+        Assinaturas_Digitais
+
+    Assinaturas_Digitais_e_Certificados
+      Assinatura_Digital
+        Autenticidade
+        Integridade
+        Nao_Repudio
+        Uso_de_Hash
+        Chave_Privada
+      Certificados_Digitais
+        Chave_Publica
+        Identidade
+        Autoridade_Certificadora
+      Tipos_de_Certificados
+        SSL_TLS
+        e_CPF
+        e_CNPJ
+        Assinatura_de_Codigo
+      Aplicacoes_Reais
+        Contratos_Digitais
+        NF_e
+        Sistemas_Bancarios
+        Seguranca_Web
